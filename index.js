@@ -85,28 +85,28 @@ gamesCard.innerHTML = `${GAMES_JSON.length}`;
 */
 
 // show only games that do not yet have enough funding
-function filterUnfundedOnly(games) {
+function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
     // use filter() to get a list of games that have not yet met their goal
-    const underGoal = games.filter(game => game.pledged < game.goal);
+    const underGoal = GAMES_JSON.filter(game => game.pledged < game.goal);
     // use the function we previously created to add the unfunded games to the DOM
     addGamesToPage(underGoal);
 }
 
 // show only games that are fully funded
-function filterFundedOnly(games) {
+function filterFundedOnly() {
     deleteChildElements(gamesContainer);
     // use filter() to get a list of games that have met or exceeded their goal
-    const metGoal = games.filter(game => game.pledged >= game.goal);
+    const metGoal = GAMES_JSON.filter(game => game.pledged >= game.goal);
     // use the function we previously created to add unfunded games to the DOM
     addGamesToPage(metGoal);
 }
 
 // show all games
-function showAllGames(games) {
+function showAllGames() {
     deleteChildElements(gamesContainer);
     // add all games from the JSON data to the DOM
-    addGamesToPage(games);
+    addGamesToPage(GAMES_JSON);
 }
 
 // select each button in the "Our Games" section
@@ -115,9 +115,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-unfundedBtn.addEventListener("click", filterUnfundedOnly(GAMES_JSON));
-fundedBtn.addEventListener("click", filterFundedOnly(GAMES_JSON));
-allBtn.addEventListener("click", showAllGames(GAMES_JSON));
+unfundedBtn.addEventListener("click", filterUnfundedOnly);
+fundedBtn.addEventListener("click", filterFundedOnly);
+allBtn.addEventListener("click", showAllGames);
 
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
