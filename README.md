@@ -30,7 +30,7 @@ GIF created with LICEcap
 
 ## Notes
 
-The biggest challenge I faced when making this website was going through all the resources and documentation in order to figure out the proper syntax for my javascript code. Syntax errors are easy for me to miss, so I spent most of the time I was programming looking for them.
+The biggest challenge I faced when making this website was going through all the resources and documentation in order to figure out the proper syntax for my javascript code. Most of the time I spent debugging was looking for syntax erros.
 
 ## License
 
